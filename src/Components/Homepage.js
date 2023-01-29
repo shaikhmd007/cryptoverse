@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { SiBitcoin } from 'react-icons/si'
 import millify from 'millify'
 
 // redux
@@ -7,12 +6,10 @@ import millify from 'millify'
 import { useGetCryptosQuery } from '../Assets/cryptoAPI';
 import Cryptocurrencies from './Cryptocurrencies';
 
-const Homepage = ({ price, Market_caps, Daily_changes }) => {
+const Homepage = () => {
     const { data } = useGetCryptosQuery(10);
     const globalStats = data?.data?.stats;
     // console.log(data);
-    // console.log(data);
-
     return (
         <section>
             <div className="grid-container">

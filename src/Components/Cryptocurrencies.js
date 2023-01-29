@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { SiBitcoin } from 'react-icons/si'
 import millify from 'millify';
 import { Link } from 'react-router-dom';
 import { useGetCryptosQuery } from '../Assets/cryptoAPI';
@@ -12,10 +11,6 @@ const Cryptocurrencies = ({ simplified }) => {
 
     useEffect(() => {
         setCryptos(cryptoList?.data?.coins);
-
-        // const filteredData = cryptosList?.data?.coins.filter((item) => item.name.toLowerCase().includes(searchTerm));
-
-        // setCryptos(filteredData);
     }, [cryptoList]);
     if (isFetching) return 'Loading..';
 
