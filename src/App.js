@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+// import { useState } from 'react';
 import './App.css';
+import { Routes, Route } from 'react-router-dom'
+import Homepage from './Components/Homepage';
+import Navbar from './Components/Navbar';
+import Exchanges from './Components/Exchanges'
+import News from './Components/News';
+import Cryptocurrencies from './Components/Cryptocurrencies';
 
 function App() {
+  // const [showMore, setShowMore] = useState(true);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <main>
+        <Navbar />
+        <section>
+          <div className='Routes'>
+            <Routes>
+              <Route exact path='/' element />
+              <Route path='/home' element={<Homepage />} />
+              <Route path='/cryptocurrencies' element={< Cryptocurrencies simplified={true} />} />
+              <Route path='/exchanges' element={<Exchanges />} />
+              <Route path='/news' element={< News />} />
+            </Routes>
+          </div>
+          {/* <Cryptocurrencies /> */}
+        </section>
+      </main >
+
+    </>
+
+  )
 }
 
 export default App;
